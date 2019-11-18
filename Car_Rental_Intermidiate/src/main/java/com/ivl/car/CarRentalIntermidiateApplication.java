@@ -1,13 +1,13 @@
-package com.manash.demo;
+package com.ivl.car;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootDemoProj1Application {
+public class CarRentalIntermidiateApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoProj1Application.class, args);
+		SpringApplication.run(CarRentalIntermidiateApplication.class, args);
 	}
 
 }
