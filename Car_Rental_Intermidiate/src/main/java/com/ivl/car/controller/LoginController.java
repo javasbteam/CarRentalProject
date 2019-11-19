@@ -6,9 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class LoginController {
 
-	@GetMapping("/home")
+	
+
+	@GetMapping("/login")
+public String viewHome() {
+		
+		return "search";
+	}
+
+	/*@GetMapping("/home")
 	public String viewHome() {
 		
-		return "home";
-	}
+		return "search";
+	}*/
+	
 }
