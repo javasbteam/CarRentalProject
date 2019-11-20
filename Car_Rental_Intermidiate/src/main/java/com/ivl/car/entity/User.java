@@ -1,15 +1,6 @@
 package com.ivl.car.entity;
 
-import java.util.Set;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import lombok.Data;
-
-@Data
+/*@Data
 public class User {
 
 	@Id
@@ -36,3 +27,4 @@ public class User {
    
 
 }
+*/

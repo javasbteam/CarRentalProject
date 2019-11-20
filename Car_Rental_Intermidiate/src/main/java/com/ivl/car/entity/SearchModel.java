@@ -7,8 +7,8 @@ import lombok.ToString;
 @ToString
 public class SearchModel {
 
-	private long city;
-	private long carType;
-	private String fromDate;
-	private String toDate;
+	private String carType;
+	private String city;
+	private String startDt;
+	private String   endDt;
 }
