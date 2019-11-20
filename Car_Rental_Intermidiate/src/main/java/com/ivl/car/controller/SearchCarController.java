@@ -2,6 +2,7 @@ package com.ivl.car.controller;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.ivl.car.entity.BookedCar;
 import com.ivl.car.entity.CarModel;
 import com.ivl.car.entity.SearchModel;
 import com.ivl.car.service.ServiceProvider;
@@ -39,9 +41,19 @@ public class SearchCarController {
 	}
 	
 	@GetMapping("/bookcar")
-	public String  bookCar(@RequestParam("carId") String carId) {
-		System.out.println(carId);
-		System.out.println(session.getAttribute("search"));
+	public String  bookCar(@RequestParam("carId") String carId,Map<String,Object> map) {
+		BookedCar bookedCar=null;
+		SearchModel searchModel=null;
+		int bookingId=new Random().nextInt(100000);
+		
+		searchModel=(SearchModel) session.getAttribute("search");
+		bookedCar=new BookedCar();
+		bookedCar.setBookId(bookingId);
+		bookedCar.setBkFromDt(searchModel.getStartDt());
+		bookedCar.setBkToDt(searchModel.getEndDt());
+		bookedCar.setCarId(Integer.valueOf(carId));
+		String msg=serviceProvider.saveBookedCar(bookedCar);
+		map.put("msg", msg);
 		return "search";
 	}
 	
