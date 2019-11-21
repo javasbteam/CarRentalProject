@@ -23,8 +23,6 @@ public class ServiceProvider {
 	public List<CarModel> searchCar(SearchModel model){
 		
 		List<CarModel> carModel=restTemplate.postForObject(API1SEARCHURL, model, List.class);
-		//List<CarModel> carModel=restTemplate.postForObject(API1SEARCHURL, model, List.class);
-		//List<CarModel> carModel=restTemplate.postForObject(API1SEARCHURL, model, List.class);
 		return carModel;
 	}
 	

@@ -36,17 +36,4 @@ public class PageConfig implements WebMvcConfigurer {
 		registry.addViewController("/login").setViewName("login");
 	}
 
-	/*
-	 * @Bean
-	 * 
-	 * @Order(1) public ViewResolver viewResolver() { InternalResourceViewResolver
-	 * bean = new InternalResourceViewResolver();
-	 * System.out.println("in viw resolveer");
-	 * 
-	 * bean.setViewClass(JstlView.class); bean.setPrefix("/WEB-INF/jsp/");
-	 * bean.setSuffix(".jsp");
-	 * 
-	 * return bean; }
-	 */
-
 }
