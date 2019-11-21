@@ -27,7 +27,8 @@ public class CarDetailsServiceImpl implements CarDetailsService{
 
 	@Override
 	public BookedCar bookCar(BookedCar bookedCar) {
-		return bookedRepo.save(bookedCar);
+		BookedCar car= bookedRepo.save(bookedCar);
+		return car;
 	}
 
 }

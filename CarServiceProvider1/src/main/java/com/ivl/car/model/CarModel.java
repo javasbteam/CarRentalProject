@@ -25,11 +25,11 @@ public class CarModel implements Serializable {
 	@Field(name = "CAR_TYPE", targetType = FieldType.STRING)
 	private String carType;
 	
-	@Field(name = "START_DT", targetType = FieldType.DATE_TIME)
-	private Date startDt;
+	@Field(name = "START_DT", targetType = FieldType.STRING)
+	private String startDt;
 	
-	@Field(name = "END_DT", targetType = FieldType.DATE_TIME)
-	private Date endDt;
+	@Field(name = "END_DT", targetType = FieldType.STRING)
+	private String endDt;
 	
 	@Field(name = "FARE", targetType = FieldType.DOUBLE)
 	private double fare;

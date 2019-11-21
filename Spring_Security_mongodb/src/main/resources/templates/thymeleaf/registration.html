@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+</head>
+<body>
+<body>
+	<div align="center">
+		<table>
+	
+			<form:form action="/savedata" modelAttribute="user">
+				<p style="font-family:Courier; color:Blue; font-size: 50px;">Welcome to Registration</p>
+				<br>
+
+
+
+				<tr style="text-align: center">
+					<td><h3 align="center">Name :</td>
+					<td><input type="text" name="name" /></td>
+
+				</tr>
+
+				<tr>
+					<td><h3 align="center">Username :</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td><h3 align="center">Password :</td>
+					<td><input type="password" name="pswd" /></td>
+				</tr>
+				<tr>
+					<td><h3 align="center">Email Id:</td>
+					<td><input type="email" name="email" /></td>
+				</tr>
+				<tr>
+					<td><h3 align="center">Mobile No :</td>
+					<td><input type="number" name="mobileno" /></td>
+				</tr>
+				<tr>
+					<td><h3 align="center">Role :</td>
+					<td><select name="Role">
+					<option value="Select">Select</option>
+							<option value="Admin">Admin</option>
+							<option value="User">User</option>
+
+					</select></td>
+				</tr>
+				<tr>
+					<td><h3 align="center">
+							<input type="submit" name="Register" value="submit" />
+						</h3></td>
+					<td>
+				<h3 align="center">
+						<input type="button" name="Canecl" value="Cancel"/>
+							
+					</h3>
+					</td></tr></form:form>
+		
+		
+	</table>
+	</div>
+</body>
+</body>
+</html>
