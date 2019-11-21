@@ -22,7 +22,7 @@ public class CarService1Resource {
 	
 	@PostMapping(value = "/searchcar1")
 	public List<CarModel> getCarByType( @RequestBody CarDetailsInput carInput){
-		return carService.searchByCarType(carInput.getCarType());
+		return carService.searchByCarType(carInput);
 	
 	}
 	

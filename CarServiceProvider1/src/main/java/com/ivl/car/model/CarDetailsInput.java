@@ -12,8 +12,8 @@ public class CarDetailsInput implements Serializable{
 	
 	private String carType;
 	private String city;
-	private Date   startDt;
-	private Date   endDt;
+	private String startDt;
+	private String endDt;
 	
 
 }

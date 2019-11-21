@@ -48,7 +48,7 @@
 					<td>${element.endDt}</td>
 					<td>${element.fare}</td>
 					<td>${element.carModel}</td>
-					<td><a
+					<td><img src="images/${element.carType}/${element.carModel}.jpg" width="300" height="300"/><a
 						href="http://localhost:8080/bookcar?carId=${element.carId}">BOOK</a></td>
 				</tr>
 			</c:forEach>
