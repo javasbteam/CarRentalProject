@@ -1,0 +1,11 @@
+#server configuration 
+server:
+  port: 9090 
+#mongo db configuration
+spring:
+  data:
+    mongodb:
+      database: CAR_SERVICE1
+      host: localhost
+      port: 27017
+      
