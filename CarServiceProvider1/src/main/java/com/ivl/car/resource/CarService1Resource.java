@@ -22,7 +22,10 @@ public class CarService1Resource {
 	
 	@PostMapping(value = "/searchcar1")
 	public List<CarModel> getCarByType( @RequestBody CarDetailsInput carInput){
-		return carService.searchByCarType(carInput);
+		
+		List<CarModel> list=carService.searchByCarType(carInput);
+		list.forEach(l1->l1.setApiAddress("api1"));
+		return list;
 	
 	}
 	

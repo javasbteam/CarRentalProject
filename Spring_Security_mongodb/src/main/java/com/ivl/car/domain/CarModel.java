@@ -17,6 +17,8 @@ public class CarModel implements Serializable {
 	private Date endDt;
 	private double fare;
 	private String carModel;
+	
+	private String apiAddress;
 
 
 }
