@@ -1,0 +1,14 @@
+#server configuration
+server:
+  port: 9091
+  
+spring:
+  application:
+    name: wish-service
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - hystrix.stream
