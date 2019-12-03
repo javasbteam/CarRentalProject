@@ -1,0 +1,6 @@
+#server configuration
+server:
+  port: 9090
+spring:
+  application:
+    name: msg-service
