@@ -2,10 +2,15 @@ package com.ivl.car;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 
+
+//@EnableCircuitBreaker
+@EnableHystrix
 @SpringBootApplication
 public class SpringbootMongodbSecurityApplication {
 
@@ -14,8 +19,8 @@ public class SpringbootMongodbSecurityApplication {
     }
     
 	@Bean
-	public RestTemplate createRestTemplate() {
-		return new RestTemplate();
+	public RestTemplate createRestTemplate(RestTemplateBuilder builder) {
+		return builder.build();
 	}
     
 }
