@@ -1,5 +1,6 @@
 package com.ivl.car.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -39,23 +40,24 @@ public class SearchCarController {
 	}
 
 	@GetMapping("/searchCar")
-	/*@HystrixCommand(fallbackMethod = "serverDown")*/
 	public  String getCarData(@ModelAttribute("search") @Valid SearchModel search, BindingResult bindingResult,Map<String, Object> map) {
-System.out.println(" i get car");
 		if (bindingResult.hasErrors()) {
-			System.out.println(" i binding car");
 
 			return "search";
 		}
-		System.out.println(" i get carrrfrbfbd");
 
 		 session.setAttribute("search", search);
-		 System.out.println(" i get carpya");
+		 List<CarModel> list1=serviceProvider.getCarDetailsFromService1(search);
+		 
+		 List<CarModel> list2=serviceProvider.getCarDetailsFromService2(search);
 
-		Map<String,List<CarModel>> listOfMap = serviceProvider.searchCar(search);
-		System.out.println(" in get car2");
+		//Map<String,List<CarModel>> listOfMap = serviceProvider.searchCar(search);
+		 Map<String,List<CarModel>> listOfMap=new HashMap<String, List<CarModel>>();
+		listOfMap.put("api1", list1);
+		listOfMap.put("api2", list2);
+		
 
-		if (listOfMap.isEmpty()) {
+		if (listOfMap.get("api1").isEmpty() && listOfMap.get("api2").isEmpty()) {
 			map.put("msg1", "No car available on this date");
 		} else {
 			map.put("api", listOfMap);
@@ -63,10 +65,6 @@ System.out.println(" i get car");
 		return "search";
 	}
 	
-	public @ResponseBody String serverDown(@ModelAttribute("search") @Valid SearchModel search, BindingResult bindingResult,Map<String, Object> map) {
-		System.out.println("===================");
-		return "serverDown";
-	}
 
 	@GetMapping("/bookcar")
 	public String bookCar(@RequestParam("carId") String carId,@RequestParam("apiID") String apiAddress, Map<String, Object> map) {
